@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    font-family: "Roboto", sans-serif;
+    /* margin: 0;padding: 0; */
+
+}
+
+.playlist1{
+    height: 310px;
+    font-size: 14px;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+    scrollbar-width: thin;
+    scrollbar-color: #555 rgb(19, 18, 18);  /* Scrollbar color and track color */
+/* background-color: aquamarine; */
+/* background-color: rgb(38, 37, 37); */
+
+display: flex;
+justify-content: space-evenly;
+}
+
+.playlist1 ul{
+    /* margin-left: 12px; */
+    /* padding: 0 10px; */
+    cursor: pointer;
+}
+.playlist1 ul li {
+    list-style-type: decimal;
+    padding: 10px px;
+    padding-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 8px;
+    
+}
+
+.songinfo div{
+    width: 170px;
+    height: 50px;
+    padding-top: 2px;
+    display: flex;
+    align-items: center;
+    
+    
+    
+}
+.playnow{
+    /* margin-left: 30px; */
+    /* margin-right: 10px; */
+    display: flex;
+    width: 80px;
+    font-size: 14px;
+justify-content: center;
+align-items: center;
+/* padding: 10px; */
+}
+.playnow span{
+font-size: 13px;
+/* margin-left: 10px; */
+width: 70px;
+
+}
+
+.volumerange{
+    cursor: pointer;
+}
+/* .insidebar{
+    display: flex;
+    justify-content: center; 
+    justify-content: space-between;
+    
+}  */
+  

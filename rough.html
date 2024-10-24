@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 10 English Songs</title>
+</head>
+<body>
+  <h1>Top 10 English Songs</h1>
+  <ul id="songs"></ul>
+
+  <script>
+    // Your Spotify API credentials
+    const clientId = 'YOUR_CLIENT_ID';
+    const clientSecret = 'YOUR_CLIENT_SECRET';
+
+    // Fetch Access Token
+    async function getAccessToken() {
+      const result = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
+        },
+        body: 'grant_type=client_credentials'
+      });
+
+      const data = await result.json();
+      return data.access_token;
+    }
+
+    // Fetch Top 10 English Songs
+    async function fetchTopSongs() {
+      const token = await getAccessToken();
+      const result = await fetch('https://api.spotify.com/v1/playlists/37i9dQZF1DX4dyzvuaRJ0n', {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+
+      const data = await result.json();
+      return data.tracks.items.slice(0, 10);
+    }
+
+    // Display Songs
+    async function displaySongs() {
+      const songs = await fetchTopSongs();
+      const songsList = document.getElementById('songs');
+
+      songs.forEach(song => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${song.track.name} by ${song.track.artists.map(artist => artist.name).join(', ')}`;
+        songsList.appendChild(listItem);
+      });
+    }
+
+    displaySongs();
+  </script>
+</body>
+</html>
+
+
+<!-- 
+------- FUNSTION FOR SORTING THE SONGS  BASED ON ARTIST NAMES   ---------- 
+
+
+// Example array of songs in the format "SongName - ArtistName"
+const songs = [
+  "Song A - Artist B",
+  "Song B - Artist C",
+  "Song C - Artist A"
+];
+
+// Function to sort songs in ascending order based on artist name
+function sortSongsByArtist(songs) {
+  return songs.sort((a, b) => {
+    const artistA = a.split(' - ')[1].toLowerCase();
+    const artistB = b.split(' - ')[1].toLowerCase();
+
+    if (artistA < artistB) {
+      return -1;
+    } else if (artistA > artistB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+}
+
+// Sort songs by artist name in ascending order
+const sortedSongs = sortSongsByArtist(songs);
+console.log("Sorted by artist name:", sortedSongs);
+
+-->

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+*{
+    /* background-color: black; */
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    /* background-color: rgb(233, 184, 184); */
+}
+body{
+    background-color: black;
+}
+.container{
+    display: flex;
+    /* gap: 5px; */
+    color: white;
+}
+.left{
+    /* background-color: rgb(38, 37, 37); */
+
+    /* padding: 20px; */
+column-gap: 2px;
+    width: 24vw;
+    /* border: 2px solid rgb(241, 12, 12); */
+    margin: 4px;
+    margin-top: 7px;
+    margin-left: 7px;
+    border-radius: 10px;
+    /* height: 87.5vh; */
+}
+.underleft{
+    border-radius: 10px;
+    padding: 20px;
+    
+    
+    background-color: rgb(38, 37, 37);
+}
+.L1{
+    background-color: rgb(19, 18, 18);
+    height: 18vh;
+}
+.L2{
+    /* min-height: 60vh; */
+    position: relative;
+    border-radius: 10px;
+    margin-top: 8px;
+    /* background-color: rgb(38, 37, 37); */
+    background-color: rgb(19, 18, 18);
+    height: 64.6vh;
+
+}
+.L1 ul li{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 45px;
+}
+.underleft{
+    padding-left: 15px;
+    /* background-color: rgb(38, 37, 37); */
+    background-color: rgb(19, 18, 18);
+
+    
+}
+.right{
+    margin: 4px;
+    margin-right: 7px;
+    margin-top: 7px;
+    /* border: 2px solid rgb(241, 12, 12); */
+    
+    border-radius: 10px;
+    width: 80vw;
+}
+.invert{
+    filter: invert(1);
+     font-weight: 400;
+     
+}
+/* giving margins  */
+.m2{
+margin: 10px;
+/* margin-left: 15px; */
+}
+
+.L2head img{
+    
+    width: 22px;
+    /* display: flex; */
+}
+.L2head{
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* min-height: vh; */
+    position: relative;
+    font-weight: bold;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    /* top: 0; */
+    /* margin: 10px; */
+}
+
+
+/* .playlist1{
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #555 rgb(19, 18, 18);  /* Scrollbar color and track color */
+
+   
+    
+/* } */ 
+
+.footchild{
+    /* padding-top: 40px; */
+    /* padding-top: 25px; */
+    
+    font-weight: bold;
+    position: absolute;
+align-content: center;
+    bottom: 30px;
+    display: flex;
+    gap: 25px;
+    font-size: 11px;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    row-gap: 10px;
+
+}
+.footchild a{
+    
+    text-decoration: none;
+    color: gray;
+    
+}
+
+
+.englishbox{
+    margin: 20px;
+    margin-top: 30px;
+    width: 90px;
+    height: 30px;
+    border: 2px solid rgb(131, 128, 128);
+    border-radius: 50px;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.close{
+    position: absolute;
+    top: 30;
+    margin-top: 30px;
+    left: 300px;
+    display: none;
+}
+
+.volumetime{
+    width: 280px;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+    gap: 20px;
+    
+    /* justify-content: center; */
+}
+/* .volumerange{
+    display: none;
+} */
+.volumerange input{
+    color: orange;
+}
+.volume{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+     
+}
+.volumerange input{
+    cursor: pointer;
+    
+}
+
+.songsulclass>li:hover{
+    background-color: rgb(43, 43, 43);
+    transition: all 1s;
+
+
+}
+
+ @media (max-width:1500px) { 
+    .left{
+        /* color: red; */
+        position: absolute;
+        left: -100%;
+        width: 350px;
+        transition-duration: .3s;
+        z-index: 5;
+    }
+    .right{
+        width: 100vw;
+        height: 99vh;
+        /* left: 0; */
+        /* margin-right: 20px; */
+    }
+    .playbar{
+        width: 98vw;
+    }
+    
+    .hamburger{
+        display: block;
+        /* color: red; */
+    }
+    .close{
+        display: block;
+    }
+    /* .playbar{
+        /* left: 0; */
+        /* font-size: 15px; */
+    /* }  */
+    .insidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        height: 18vh;
+    }
+    
+    .songinformation{
+        display: flex;
+        justify-content: center;
+    }
+    .songtime{
+        display: flex;
+        justify-content: center;
+    }
+    .playbarsvg{
+        display: flex;
+        justify-content: center;
+        margin-right: 30px;
+        
+    }
+    
+    .cardcontainer{
+        height: 50vh;
+        
+    }
+   
+    .playbarcontainer{
+        display: flex;
+        justify-content: center;
+    }
+
+    .L2{
+        height: 66vh;
+    }
+} 
+
+
